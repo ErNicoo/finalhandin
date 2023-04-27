@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" >
+{% endblock %}
+
+{% block title %}My portfolio website{% endblock %}
+
+{% block body %}
+        
+{{ super() }}
+     <div class="title">
+        <h1>Welcome to Nicolò Forti portfolio website</h1>
+     </div>
+     <div class="text box">
+        <p>In this website I will showcase some pages and features that satisfy all the requiremenets of the hand-in</p>
+        <p>This is the homepage and it is teh introduction to the website, then we have an about-me page with no particular features. The project page is built using a database</p>
+        <p>The data base can be accessed with the following paths: '/create' '/delete/int' '/edit/int' int=id of the project ranging from 1 to 5 in the case of the final hand-in where 5 projects are present</p>
+        <p>There is a dropdown menu when hovering over the contact where it redirects the viewer to my instagram account or to their email application to contact me directly</p>
+        <p>Last thing, the Toggle Dark Mode is applied to every page and with javascript it remembers when it was pressed so when navigating through the website, it will stay with the selected mode</p>
+    </div>
+{% endblock %}

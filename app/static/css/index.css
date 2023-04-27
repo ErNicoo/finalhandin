@@ -1,0 +1,65 @@
+@media only screen and (min-width: 600px) {
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .title h1 {
+    font-size: 54px;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    text-align: center;
+    margin: 50px 100px;
+  }
+  
+  .text p {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+    
+  }
+
+  .dark-mode .text {
+    color:whitesmoke;
+  }
+}  
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .title h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    text-align: center;
+    margin: 50px 100px;
+  }
+  
+  .text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    
+  }
+
+  .dark-mode .text {
+    color:whitesmoke;
+  }
+
+}

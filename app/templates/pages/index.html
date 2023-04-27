@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}" media="(prefers-color-scheme: light)">
+{% endblock %}
+
+{% block title %}My projects{% endblock %}
+
+{% block body %}
+
+{{ super() }}
+    <body>
+            {% for project in projects %}
+                <div class="project-box">
+                    <a href="/projects/{{ project.slug }}">{{ project.name }}</a>
+                </div>
+            {% endfor %}
+
+    </body>
+{% endblock %}

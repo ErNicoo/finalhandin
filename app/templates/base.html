@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+         <title> My portfolio website</title>
+         <title>{% block title %}{% endblock %}</title>
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+         <script src="{{ url_for('static', filename='js/dark-mode.js') }}"></script>
+    {% endblock %}
+
+</head>
+<body>
+    {% block body %}
+    <div class="grid">
+        <div class="header">
+            <a href="/" class="logo">Home</a>
+            <div class="header-right">
+                <a href="/about-me">about me</a>
+                <a href="/projects">projects</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Contact</button>
+                    <div class="dropdown-content">
+                        <a href="https://www.instagram.com/nicolo_forti__/">Instagram</a>
+                        <a href="mailto:nicolo.forti@me.com">nicolo.forti@me.com</a>
+                    </div>
+                </div>
+                <button id="dark-mode-button">Toggle Dark Mode</button>
+            </div>
+        </div>
+    </div>
+        <!--<button id="dark-mode-button">Toggle Dark Mode</button>-->
+
+        <script>
+            var button = document.getElementById('dark-mode-button');
+            button.addEventListener('click', toggleDarkMode);
+          
+            function toggleDarkMode() {
+              var body = document.body;
+              body.classList.toggle('dark-mode');
+              var isDark = body.classList.contains('dark-mode');
+              localStorage.setItem('isDark', isDark);
+            }
+            
+            // Dropdown menu
+            var dropdown = document.getElementsByClassName("dropdown");
+            var i;
+
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("mouseover", function() {
+                this.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
+              });
+              dropdown[i].addEventListener("mouseout", function() {
+                this.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
+              });
+            }
+          </script>
+
+    {% endblock %}
+</body>
+</html>
